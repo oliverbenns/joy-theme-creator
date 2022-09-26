@@ -11,9 +11,9 @@ jobs:
       - run: npm ci
       - run: npm run build
       - uses: actions/upload-artifact@v3.1.0
-          with:
-            name: build
-            path: ./build/*
+        with:
+          name: build
+          path: ./build/*
   deploy:
     needs: build
     permissions:
