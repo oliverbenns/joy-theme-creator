@@ -1,0 +1,31 @@
+name: Deploy
+on: workflow_dispatch
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: 17.5.0
+      - run: npm ci
+      - run: npm run build
+      - uses: actions/upload-artifact@v3.1.0
+          with:
+            name: build
+            path: ./build/*
+  deploy:
+    needs: build
+    permissions:
+      pages: write 
+      id-token: write   
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/deploy-pages@v1 
+        id: deployment
+	with:
+	  artifact_name: build
+        
