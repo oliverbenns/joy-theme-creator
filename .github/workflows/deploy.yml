@@ -26,6 +26,6 @@ jobs:
     steps:
       - uses: actions/deploy-pages@v1 
         id: deployment
-	with:
-	  artifact_name: build
+        with:
+          artifact_name: build
         
