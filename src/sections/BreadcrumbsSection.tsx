@@ -1,9 +1,7 @@
 import * as React from "react";
 import Breadcrumbs from "@mui/joy/Breadcrumbs";
 import Typography from "@mui/joy/Typography";
-import Box from "@mui/joy/Box";
 import Link from "@mui/joy/Link";
-import options from "./options";
 
 const BreadcrumbsSection = () => {
   return (

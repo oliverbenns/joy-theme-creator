@@ -1,6 +1,5 @@
 import * as React from "react";
 import Typography from "@mui/joy/Typography";
-import options from "./options";
 
 const TypographySection = () => {
   return (

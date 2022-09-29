@@ -1,6 +1,4 @@
 import * as React from "react";
-import Button from "@mui/joy/Button";
-import Typography from "@mui/joy/Typography";
 import Box from "@mui/joy/Box";
 import options from "./options";
 import Tabs from "@mui/joy/Tabs";
