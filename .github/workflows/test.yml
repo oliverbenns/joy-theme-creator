@@ -18,3 +18,6 @@ jobs:
       - run: npm ci
       - run: npm run fmt-check
       - run: npm run tsc
+      # Ideally we would use this instead of have to build:
+      # https://github.com/facebook/create-react-app/pull/11556
+      - run: npm run build
