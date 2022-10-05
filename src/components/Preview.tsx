@@ -6,15 +6,18 @@ import { navGroups } from "../nav";
 import { CssVarsProvider } from "@mui/joy/styles";
 import useAppState from "../hooks/useAppState";
 import ListDivider from "@mui/joy/ListDivider";
+import { useTheme } from "@mui/joy/styles";
 
 const Preview = () => {
   const appState = useAppState();
+  const theme = useTheme();
 
   return (
     <Box component="main" sx={{ p: 2 }}>
       {navGroups.map((group) => {
         return group.items.map((item) => {
           const Component = item.component;
+          const id = item.href.replace("#", "");
 
           return (
             <Sheet
@@ -26,7 +29,17 @@ const Preview = () => {
               key={item.href}
             >
               <CssVarsProvider disableTransitionOnChange theme={appState.theme}>
-                <Box sx={{ p: 2 }} id={item.href.replace("#", "")}>
+                <Box sx={{ p: 2 }}>
+                  <a
+                    id={id}
+                    style={{
+                      position: "relative",
+                      visibility: "hidden",
+                      // @TODO: Pass header ref for offset
+                      // css calc required because theme.spacing gives string
+                      top: `calc((65px + ${theme.spacing(3)}) * -1)`,
+                    }}
+                  />
                   <Typography level="h4" textColor="text.primary">
                     {item.label}
                   </Typography>
