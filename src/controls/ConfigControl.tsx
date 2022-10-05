@@ -5,7 +5,7 @@ import IconButton from "@mui/joy/IconButton";
 import ContentCopyIcon from "@mui/icons-material/ContentCopy";
 import { useTheme } from "@mui/joy/styles";
 
-const EditorControl = () => {
+const ConfigControl = () => {
   const appState = useAppState();
   const content = JSON.stringify(appState.themeOptions, null, 2);
   const theme = useTheme();
@@ -56,4 +56,4 @@ const EditorControl = () => {
     </Box>
   );
 };
-export default EditorControl;
+export default ConfigControl;

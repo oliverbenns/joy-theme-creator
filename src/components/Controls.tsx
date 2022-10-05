@@ -5,9 +5,9 @@ import Sheet from "@mui/joy/Sheet";
 
 import PaletteControl from "../controls/PaletteControl";
 import TypographyControl from "../controls/TypographyControl";
-import EditorControl from "../controls/EditorControl";
+import ConfigControl from "../controls/ConfigControl";
 
-type TabId = "palette" | "typography" | "editor";
+type TabId = "palette" | "typography" | "config";
 
 const Controls = () => {
   const [activeTab, setActiveTab] = React.useState<TabId>("palette");
@@ -35,16 +35,16 @@ const Controls = () => {
           Typography
         </Tab>
         <Tab
-          active={activeTab === "editor"}
-          onClick={() => setActiveTab("editor")}
+          active={activeTab === "config"}
+          onClick={() => setActiveTab("config")}
         >
-          Editor
+          Config
         </Tab>
       </Box>
       <Box sx={{ p: 2 }}>
         {activeTab === "palette" && <PaletteControl />}
         {activeTab === "typography" && <TypographyControl />}
-        {activeTab === "editor" && <EditorControl />}
+        {activeTab === "config" && <ConfigControl />}
       </Box>
     </Sheet>
   );
