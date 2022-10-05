@@ -20,6 +20,17 @@ const Header = () => {
 
   React.useEffect(() => {
     setMounted(true);
+
+    // scroll to anchor
+    const hash = window.location.hash;
+    if (!hash) {
+      return;
+    }
+
+    const el = document.querySelector(hash);
+    if (el) {
+      el.scrollIntoView();
+    }
   }, []);
 
   return (
