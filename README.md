@@ -6,6 +6,8 @@ This project exposes the theming options available in [Joy UI](https://mui.com/j
 
 It also provides the ability for you to copy the theme configuration object directly into your own Joy UI project's source code after tinkering with these controls.
 
+View the project here: [oliverbenns.github.io/joy-theme-creator](https://oliverbenns.github.io/joy-theme-creator)
+
 ## Quick Start
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
