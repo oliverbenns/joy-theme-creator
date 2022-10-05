@@ -2,7 +2,7 @@
   "name": "joy-theme-creator",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://oliverbenns.github.io/joy-theme-creator",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/style": "^0.8.0",

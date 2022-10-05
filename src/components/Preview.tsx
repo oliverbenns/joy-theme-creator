@@ -29,7 +29,7 @@ const Preview = () => {
             >
               <CssVarsProvider disableTransitionOnChange theme={appState.theme}>
                 <Box sx={{ p: 2 }}>
-                  <a
+                  <div
                     id={item.id}
                     style={{
                       position: "relative",
