@@ -16,10 +16,11 @@ const Navigation = () => {
         bgcolor: "background.componentBg",
         borderRight: "1px solid",
         borderColor: "divider",
-        display: {
-          xs: "none",
-          sm: "initial",
-        },
+        // @TODO: Pass header ref and calculate or improve css
+        position: "sticky",
+        top: 65,
+        height: "calc(100vh - 65px)",
+        alignSelf: "flex-start",
       }}
     >
       <List size="sm" sx={{ "--List-item-radius": "8px" }}>

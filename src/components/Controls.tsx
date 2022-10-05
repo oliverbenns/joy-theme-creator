@@ -15,10 +15,14 @@ const Controls = () => {
   return (
     <Sheet
       sx={{
-        display: { xs: "none", sm: "initial" },
         borderLeft: "1px solid",
         borderColor: "neutral.outlinedBorder",
         bgcolor: "background.componentBg",
+        // @TODO: Pass header ref and calculate or improve css
+        position: "sticky",
+        top: 65,
+        height: "calc(100vh - 65px)",
+        alignSelf: "flex-start",
       }}
     >
       <Box sx={{ display: "flex" }}>

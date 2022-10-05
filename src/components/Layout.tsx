@@ -12,7 +12,6 @@ const Layout = (props: LayoutProps) => (
       display: "grid",
       gridTemplateColumns:
         "minmax(160px, 240px) minmax(600px, 1fr) minmax(300px, 420px)",
-      minHeight: "100vh",
     }}
   >
     {props.children}
