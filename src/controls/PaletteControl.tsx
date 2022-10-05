@@ -169,9 +169,6 @@ const PaletteControl = () => {
                     {paletteKeys.map((key) => {
                       const label = key.replace(variant.id, "");
                       const value = themeOptions?.[color.id]?.[key];
-                      //console.log("themeOptions", themeOptions);
-                      //console.log("palette", palette);
-                      //console.log("key", key);
                       const defaultThemeValue = getCssUnderlyingValue(
                         palette[key]
                       ).toUpperCase();

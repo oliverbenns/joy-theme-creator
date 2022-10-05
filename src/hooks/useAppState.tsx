@@ -84,7 +84,6 @@ export const AppStateProvider = (props: AppStateProviderProps) => {
   const [theme, _setTheme] = useState(defaultTheme);
   const { colorScheme } = useColorScheme();
   const _colorScheme = colorScheme as DefaultColorScheme;
-  console.log(theme);
 
   const setTheme = useCallback(
     (opts: CssVarsThemeOptions) => {
