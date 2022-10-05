@@ -12,7 +12,7 @@ const ConfigControl = () => {
 
   const copyToClipboard = async () => {
     try {
-      const result = await navigator.clipboard.writeText(content);
+      await navigator.clipboard.writeText(content);
       alert("Theme copied to clipboard");
     } catch (err) {
       alert("Error copying theme to clipboard");
