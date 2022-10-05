@@ -17,7 +17,6 @@ const Preview = () => {
       {navGroups.map((group) => {
         return group.items.map((item) => {
           const Component = item.component;
-          const id = item.href.replace("#", "");
 
           return (
             <Sheet
@@ -26,12 +25,12 @@ const Preview = () => {
                 borderRadius: "sm",
                 mb: 2,
               }}
-              key={item.href}
+              key={item.id}
             >
               <CssVarsProvider disableTransitionOnChange theme={appState.theme}>
                 <Box sx={{ p: 2 }}>
                   <a
-                    id={id}
+                    id={item.id}
                     style={{
                       position: "relative",
                       visibility: "hidden",

@@ -53,9 +53,8 @@ const Navigation = () => {
                 <List>
                   {group.items.map((item) => {
                     return (
-                      <ListItem key={item.href}>
-                        {/* set variant="soft" color=primary if selected */}
-                        <ListItemButton component="a" href={item.href}>
+                      <ListItem key={item.id}>
+                        <ListItemButton component="a" href={"#" + item.id}>
                           <ListItemContent>{item.label}</ListItemContent>
                         </ListItemButton>
                       </ListItem>
