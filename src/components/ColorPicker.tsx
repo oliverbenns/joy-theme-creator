@@ -99,7 +99,7 @@ const Dropper = (props: DropperProps) => {
             sx={{
               borderStyle: "solid",
               borderWidth: 1,
-              borderColor: "neutral.outlinedHoverBorder",
+              borderColor: "neutral.outlinedBorder",
               overflow: "hidden",
               borderRadius: (th) => th.radius.sm,
               boxShadow: (th) => th.shadow.md,
@@ -126,7 +126,7 @@ const Dropper = (props: DropperProps) => {
           borderRadius: 10,
           borderStyle: "solid",
           borderWidth: 1,
-          borderColor: "neutral.outlinedHoverBorder",
+          borderColor: "neutral.outlinedBorder",
           boxSizing: "border-box",
           cursor: "pointer",
           padding: 0,
