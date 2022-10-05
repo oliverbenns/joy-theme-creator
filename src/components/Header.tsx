@@ -62,7 +62,7 @@ const Header = () => {
       >
         <PaletteIcon />
         <Typography component="h1" fontWeight="xl">
-          Joy UI Theme Creator
+          Joy Theme Creator
         </Typography>
         <Typography component="span" level="body4">
           @mui/joy@{joyVersion}
