@@ -3,7 +3,7 @@ import Box from "@mui/joy/Box";
 import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import RefreshIcon from "@mui/icons-material/Refresh";
+import ReplayIcon from "@mui/icons-material/Replay";
 import { useColorScheme } from "@mui/joy/styles";
 import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
@@ -103,7 +103,7 @@ const Header = () => {
           color="primary"
           onClick={appState.reset}
         >
-          <RefreshIcon />
+          <ReplayIcon />
         </IconButton>
       </Box>
     </Box>
