@@ -1,5 +1,5 @@
 import * as React from "react";
-import Button, { ButtonProps }from "@mui/joy/Button";
+import Button, { ButtonProps } from "@mui/joy/Button";
 import Typography from "@mui/joy/Typography";
 import Box from "@mui/joy/Box";
 import options, { Variant } from "./options";
@@ -27,7 +27,7 @@ const ButtonSection = () => {
             <Typography component="span" level="body1" sx={{ mb: 1 }}>
               {variant.label}
             </Typography>
-            <Box sx={{ display: "flex", gap: 1 }}>
+            <Box sx={{ display: "flex", gap: 2 }}>
               {options.colors.map((color) => {
                 return (
                   <Button

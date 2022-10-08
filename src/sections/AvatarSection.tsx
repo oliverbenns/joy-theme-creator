@@ -10,7 +10,7 @@ const AvatarSection = () => {
       <Typography component="span" level="body1" sx={{ mb: 1 }}>
         Icon
       </Typography>
-      <Box sx={{ display: "flex", gap: 1, mb: 2 }}>
+      <Box sx={{ display: "flex", gap: 2, mb: 2 }}>
         {options.colors.map((color) => {
           return <Avatar key={color.id} color={color.id} />;
         })}
@@ -18,7 +18,7 @@ const AvatarSection = () => {
       <Typography component="span" level="body1" sx={{ mb: 1 }}>
         Initials
       </Typography>
-      <Box sx={{ display: "flex", gap: 1, mb: 2 }}>
+      <Box sx={{ display: "flex", gap: 2 }}>
         {options.colors.map((color) => {
           return (
             <Avatar key={color.id} color={color.id}>

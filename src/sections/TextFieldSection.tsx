@@ -14,19 +14,25 @@ const TextFieldSection = () => {
               {variant.label}
             </Typography>
 
-            <Box sx={{ display: "flex", gap: 2 }}>
-              <TextField placeholder="Type in here…" variant={variant.id} />
-              <TextField
-                placeholder="Type in here…"
-                variant={variant.id}
-                disabled
-              />
-              <TextField
-                placeholder="Type in here…"
-                variant={variant.id}
-                error
-                helperText="Error text"
-              />
+            <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+              <div>
+                <TextField placeholder="Type in here…" variant={variant.id} />
+              </div>
+              <div>
+                <TextField
+                  placeholder="Type in here…"
+                  variant={variant.id}
+                  disabled
+                />
+              </div>
+              <div>
+                <TextField
+                  placeholder="Type in here…"
+                  variant={variant.id}
+                  error
+                  helperText="Error text"
+                />
+              </div>
             </Box>
           </Box>
         );

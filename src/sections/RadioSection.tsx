@@ -27,7 +27,7 @@ const RadioSection = () => {
             <Typography component="span" level="body1" sx={{ mb: 1 }}>
               {variant.label}
             </Typography>
-            <Box sx={{ display: "flex", gap: 2 }}>
+            <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               {options.colors.map((color) => {
                 return (
                   <Radio

@@ -2,18 +2,18 @@ import * as React from "react";
 import Slider, { SliderProps } from "@mui/joy/Slider";
 import Typography from "@mui/joy/Typography";
 import Box from "@mui/joy/Box";
-import options, { Color } from "./options";
+import options, { Variant } from "./options";
 
-interface SliderVariant extends Color {
+interface SliderVariant extends Variant {
   additionalProps?: Partial<SliderProps>;
 }
 
 const sliderVariants: SliderVariant[] = [];
 
-options.colors.forEach((color) => {
-  sliderVariants.push(color, {
-    ...color,
-    label: `${color.label} disabled`,
+options.variants.forEach((variant) => {
+  sliderVariants.push(variant, {
+    ...variant,
+    label: `${variant.label} disabled`,
     additionalProps: { disabled: true },
   });
 });
@@ -21,24 +21,30 @@ options.colors.forEach((color) => {
 const SliderSection = () => {
   return (
     <>
-      <Box sx={{ display: "flex", gap: 2, mb: 3, columnCount: 2 }}>
-        {sliderVariants.map((variant) => {
-          return (
-            <Box key={variant.label}>
-              <Typography component="span" level="body1" sx={{ mb: 1 }}>
-                {variant.label}
-              </Typography>
-              <Slider
-                key={variant.id}
-                color={variant.id}
-                defaultValue={6}
-                max={10}
-                {...variant.additionalProps}
-              />
+      {sliderVariants.map((variant) => {
+        return (
+          <Box key={variant.label} sx={{ mb: 3 }}>
+            <Typography component="span" level="body1" sx={{ mb: 1 }}>
+              {variant.label}
+            </Typography>
+            <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
+              {options.colors.map((color) => {
+                return (
+                  <Box sx={{ width: 100 }}>
+                    <Slider
+                      key={variant.id}
+                      color={color.id}
+                      defaultValue={6}
+                      max={10}
+                      {...variant.additionalProps}
+                    />
+                  </Box>
+                );
+              })}
             </Box>
-          );
-        })}
-      </Box>
+          </Box>
+        );
+      })}
     </>
   );
 };
