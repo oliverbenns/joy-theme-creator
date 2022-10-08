@@ -6,13 +6,14 @@ import ListItemButton from "@mui/joy/ListItemButton";
 
 const ListSection = () => {
   return (
-    <Box sx={{ display: "flex", gap: 1 }}>
+    <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
       {options.colors.map((color) => {
         return (
           <List
             component="nav"
             sx={{
               maxWidth: 320,
+              minWidth: 200,
             }}
             key={color.id}
           >
