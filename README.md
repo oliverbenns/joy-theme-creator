@@ -1,6 +1,6 @@
 # Joy Theme Creator
 
-_Note: currently a work in progress - some things may not be finished or working as expected._
+_Note: Joy UI is currently in alpha - some things may not be finished or working as expected._
 
 This project exposes the theming options available in [Joy UI](https://mui.com/joy-ui/getting-started/overview) by providing color palette and typography controls.
 
