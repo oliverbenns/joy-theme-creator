@@ -4,9 +4,11 @@ import DarkModeRoundedIcon from "@mui/icons-material/DarkModeRounded";
 import LightModeRoundedIcon from "@mui/icons-material/LightModeRounded";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import ReplayIcon from "@mui/icons-material/Replay";
+import LaunchIcon from "@mui/icons-material/Launch";
 import { useColorScheme } from "@mui/joy/styles";
 import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
+import Button from "@mui/joy/Button";
 import PaletteIcon from "@mui/icons-material/Palette";
 import pkg from "../../package.json";
 import useAppState from "../hooks/useAppState";
@@ -70,7 +72,6 @@ const Header = () => {
       </Box>
       <Box sx={{ display: "flex", flexDirection: "row", gap: 1.5 }}>
         <IconButton
-          size="sm"
           variant="outlined"
           color="primary"
           component="a"
@@ -81,7 +82,6 @@ const Header = () => {
         </IconButton>
         {mounted ? (
           <IconButton
-            size="sm"
             variant="outlined"
             color="primary"
             onClick={() => {
@@ -97,14 +97,19 @@ const Header = () => {
         ) : (
           <IconButton size="sm" variant="outlined" color="primary" />
         )}
-        <IconButton
-          size="sm"
-          variant="outlined"
-          color="primary"
-          onClick={appState.reset}
-        >
+        <IconButton variant="outlined" color="primary" onClick={appState.reset}>
           <ReplayIcon />
         </IconButton>
+        <Button
+          size="sm"
+          variant="outlined"
+          component="a"
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdiPv04dIS_JDId52TcRErzE6DHgYtbZS-gwVsMUDYXiHquUA/viewform?usp=sf_link"
+          target="_blank"
+          endDecorator={<LaunchIcon />}
+        >
+          Joy Templates
+        </Button>
       </Box>
     </Box>
   );

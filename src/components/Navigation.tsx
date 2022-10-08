@@ -18,8 +18,8 @@ const Navigation = () => {
         borderColor: "divider",
         // @TODO: Pass header ref and calculate or improve css
         position: "sticky",
-        top: 65,
-        height: "calc(100vh - 65px)",
+        top: 73,
+        height: "calc(100vh - 73px)",
         alignSelf: "flex-start",
       }}
     >
