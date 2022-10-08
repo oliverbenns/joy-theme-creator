@@ -1,6 +1,6 @@
 import * as React from "react";
 import Box from "@mui/joy/Box";
-import options, { Variant } from "./options";
+import options from "./options";
 import MenuList from "@mui/joy/MenuList";
 import MenuItem from "@mui/joy/MenuItem";
 import Typography from "@mui/joy/Typography";

@@ -1,7 +1,7 @@
 import * as React from "react";
 import Box from "@mui/joy/Box";
-import options, { Variant } from "./options";
-import List, { ListProps } from "@mui/joy/List";
+import options from "./options";
+import List from "@mui/joy/List";
 import ListItemButton from "@mui/joy/ListItemButton";
 import Typography from "@mui/joy/Typography";
 
