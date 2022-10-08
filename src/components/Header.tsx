@@ -74,6 +74,7 @@ const Header = () => {
           variant="outlined"
           color="primary"
           component="a"
+          target="_blank"
           href="https://github.com/oliverbenns/joy-theme-creator"
         >
           <GitHubIcon />
