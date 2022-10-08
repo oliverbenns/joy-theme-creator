@@ -1,13 +1,27 @@
 import * as React from "react";
-import Button from "@mui/joy/Button";
+import Button, { ButtonProps }from "@mui/joy/Button";
 import Typography from "@mui/joy/Typography";
 import Box from "@mui/joy/Box";
-import options from "./options";
+import options, { Variant } from "./options";
+
+interface ButtonVariant extends Variant {
+  additionalProps?: Partial<ButtonProps>;
+}
+
+const buttonVariants: ButtonVariant[] = [];
+
+options.variants.forEach((variant) => {
+  buttonVariants.push(variant, {
+    ...variant,
+    label: `${variant.label} disabled`,
+    additionalProps: { disabled: true },
+  });
+});
 
 const ButtonSection = () => {
   return (
     <>
-      {options.variants.map((variant) => {
+      {buttonVariants.map((variant) => {
         return (
           <Box key={variant.id} sx={{ mb: 2 }}>
             <Typography component="span" level="body1" sx={{ mb: 1 }}>
@@ -21,6 +35,7 @@ const ButtonSection = () => {
                     size="md"
                     variant={variant.id}
                     color={color.id}
+                    {...variant.additionalProps}
                   >
                     {color.label}
                   </Button>
