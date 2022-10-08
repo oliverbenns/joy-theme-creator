@@ -17,7 +17,11 @@ const ListSection = () => {
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               {options.colors.map((color) => {
                 return (
-                  <List component="nav" key={color.id} sx={{ minWidth: 100 }}>
+                  <List
+                    component="nav"
+                    key={color.id}
+                    sx={{ width: 100, maxWidth: 100 }}
+                  >
                     <ListItemButton>Lorem</ListItemButton>
                     <ListItemButton color={color.id} variant={variant.id}>
                       {color.label}

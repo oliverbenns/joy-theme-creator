@@ -17,7 +17,7 @@ const MenuSection = () => {
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               {options.colors.map((color) => {
                 return (
-                  <MenuList key={color.id} sx={{ minWidth: 100 }}>
+                  <MenuList key={color.id} sx={{ width: 100, maxWidth: 100 }}>
                     <MenuItem>Lorem</MenuItem>
                     <MenuItem color={color.id} variant={variant.id}>
                       {color.label}
