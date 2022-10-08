@@ -18,6 +18,9 @@ import {
   isPlainObject,
   fromPairs,
 } from "lodash";
+import pkg from "../../package.json";
+
+const joyVersion = pkg.dependencies["@mui/joy"];
 
 // https://stackoverflow.com/questions/42736031/remove-empty-objects-from-an-object
 const removeEmptyObjects = (o: any): any => {
@@ -59,8 +62,13 @@ interface AppState {
   setFontFamily: SetFontFamilyHandler;
   clearFontFamily: ClearFontFamilyHandler;
 }
-
-const ls = window.localStorage.getItem("themeOptions");
+// @NOTE: This is a really primitive way of version handling
+// Once a version bump happens on this project, the theme options
+// set already just won't be used. This is ok for this hobby piece
+// and will at least prevent type errors which is likely with joy
+// in alpha stage at time of writing.
+const lsKey = `themeOptions-${joyVersion}`;
+const ls = window.localStorage.getItem(lsKey);
 const defaultThemeOptions: CssVarsThemeOptions = ls ? JSON.parse(ls) : {};
 const defaultTheme = extendTheme(defaultThemeOptions);
 
@@ -91,7 +99,7 @@ export const AppStateProvider = (props: AppStateProviderProps) => {
 
       // @NOTE: Possibility of timing issue. Unlikely
       (async () => {
-        window.localStorage.setItem("themeOptions", JSON.stringify(opts));
+        window.localStorage.setItem(lsKey, JSON.stringify(opts));
       })();
 
       _setTheme(theme);
