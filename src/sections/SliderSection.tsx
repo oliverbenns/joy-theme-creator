@@ -30,9 +30,8 @@ const SliderSection = () => {
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               {options.colors.map((color) => {
                 return (
-                  <Box sx={{ width: 100 }}>
+                  <Box sx={{ width: 100 }} key={color.id}>
                     <Slider
-                      key={variant.id}
                       color={color.id}
                       defaultValue={6}
                       max={10}

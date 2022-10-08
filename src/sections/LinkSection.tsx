@@ -23,7 +23,7 @@ const LinkSection = () => {
     <>
       {linkVariants.map((variant) => {
         return (
-          <Box key={variant.id} sx={{ mb: 2 }}>
+          <Box key={variant.label} sx={{ mb: 2 }}>
             <Typography component="span" level="body1" sx={{ mb: 1 }}>
               {variant.label}
             </Typography>
