@@ -16,13 +16,22 @@ const MenuSection = () => {
             </Typography>
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               {options.colors.map((color) => {
+                // tabIndex unset here as without show/hide it's taking tab precedence.
                 return (
-                  <MenuList key={color.id} sx={{ width: 100, maxWidth: 100 }}>
-                    <MenuItem>Lorem</MenuItem>
-                    <MenuItem color={color.id} variant={variant.id}>
+                  <MenuList
+                    tabIndex={undefined}
+                    key={color.id}
+                    sx={{ width: 100, maxWidth: 100 }}
+                  >
+                    <MenuItem tabIndex={undefined}>Lorem</MenuItem>
+                    <MenuItem
+                      tabIndex={undefined}
+                      color={color.id}
+                      variant={variant.id}
+                    >
                       {color.label}
                     </MenuItem>
-                    <MenuItem>Dolor</MenuItem>
+                    <MenuItem tabIndex={undefined}>Dolor</MenuItem>
                   </MenuList>
                 );
               })}
