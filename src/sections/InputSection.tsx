@@ -1,10 +1,12 @@
 import * as React from "react";
-import TextField from "@mui/joy/TextField";
+import Input from "@mui/joy/Input";
 import Typography from "@mui/joy/Typography";
 import Box from "@mui/joy/Box";
+import FormControl from "@mui/joy/FormControl";
+import FormHelperText from "@mui/joy/FormHelperText";
 import options from "./options";
 
-const TextFieldSection = () => {
+const InputSection = () => {
   return (
     <>
       {options.variants.map((variant) => {
@@ -16,22 +18,24 @@ const TextFieldSection = () => {
 
             <Box sx={{ display: "flex", gap: 2, flexWrap: "wrap" }}>
               <div>
-                <TextField placeholder="Type in here…" variant={variant.id} />
+                <Input placeholder="Type in here…" variant={variant.id} />
               </div>
               <div>
-                <TextField
+                <Input
                   placeholder="Type in here…"
                   variant={variant.id}
                   disabled
                 />
               </div>
               <div>
-                <TextField
-                  placeholder="Type in here…"
-                  variant={variant.id}
-                  error
-                  helperText="Error text"
-                />
+                <FormControl>
+                  <Input
+                    placeholder="Type in here…"
+                    variant={variant.id}
+                    error
+                  />
+                  <FormHelperText>Error text</FormHelperText>
+                </FormControl>
               </div>
             </Box>
           </Box>
@@ -41,4 +45,4 @@ const TextFieldSection = () => {
   );
 };
 
-export default TextFieldSection;
+export default InputSection;

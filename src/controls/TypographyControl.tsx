@@ -29,7 +29,7 @@ const FontPicker = (props: FontPickerProps) => {
         sx={{
           flexGrow: 1,
         }}
-        componentsProps={{
+        slotProps={{
           listbox: {
             sx: {
               maxHeight: 300,

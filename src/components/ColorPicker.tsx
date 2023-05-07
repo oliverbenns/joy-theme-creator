@@ -1,8 +1,9 @@
 import React, { useEffect, useId } from "react";
 import Box from "@mui/joy/Box";
-import TextField from "@mui/joy/TextField";
+import Input from "@mui/joy/Input";
 import FormLabel from "@mui/joy/FormLabel";
 import Link from "@mui/joy/Link";
+import FormControl from "@mui/joy/FormControl";
 import CloseIcon from "@mui/icons-material/Close";
 import { SxProps } from "@mui/system";
 import { Theme } from "@mui/joy/styles";
@@ -26,39 +27,39 @@ const ColorPicker = (props: ColorPickerProps) => {
     <Box>
       {props.label && <FormLabel htmlFor={id}>{props.label}</FormLabel>}
       <Box sx={{ position: "relative" }}>
-        <TextField
-          sx={props.textFieldSx}
-          value={props.value}
-          onChange={(ev) => {
-            if (props.onChange) {
-              props.onChange(ev.target.value);
+        <FormControl size="sm" id={id}>
+          <Input
+            sx={props.textFieldSx}
+            value={props.value}
+            onChange={(ev) => {
+              if (props.onChange) {
+                props.onChange(ev.target.value);
+              }
+            }}
+            placeholder={props.placeholder}
+            endDecorator={
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 0.5,
+                }}
+              >
+                {props.value && (
+                  <Link
+                    component="button"
+                    onClick={props.onClear}
+                    color="neutral"
+                    sx={{ fontSize: "xs" }}
+                  >
+                    <CloseIcon />
+                  </Link>
+                )}
+                <Dropper value={props.dropperValue} onChange={props.onChange} />
+              </Box>
             }
-          }}
-          size="sm"
-          id={id}
-          placeholder={props.placeholder}
-          endDecorator={
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: 0.5,
-              }}
-            >
-              {props.value && (
-                <Link
-                  component="button"
-                  onClick={props.onClear}
-                  color="neutral"
-                  sx={{ fontSize: "xs" }}
-                >
-                  <CloseIcon />
-                </Link>
-              )}
-              <Dropper value={props.dropperValue} onChange={props.onChange} />
-            </Box>
-          }
-        />
+          />
+        </FormControl>
       </Box>
     </Box>
   );

@@ -13,7 +13,7 @@ import SelectSection from "./sections/SelectSection";
 import SliderSection from "./sections/SliderSection";
 import SwitchSection from "./sections/SwitchSection";
 import TabsSection from "./sections/TabsSection";
-import TextFieldSection from "./sections/TextFieldSection";
+import InputSection from "./sections/InputSection";
 import TypographySection from "./sections/TypographySection";
 
 interface NavItem {
@@ -40,10 +40,11 @@ export const navGroups: NavGroup[] = [
           "Buttons allow users to take actions, and make choices, with a single tap.",
       },
       {
-        id: "text-field",
-        label: "Text field",
-        component: TextFieldSection,
-        description: "Text fields let users enter and edit text.",
+        id: "input",
+        label: "Input",
+        component: InputSection,
+        description:
+          "The Input component facilitates the entry of text data from the user.",
       },
       {
         id: "checkbox",
