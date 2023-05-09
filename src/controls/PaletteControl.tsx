@@ -16,6 +16,7 @@ import {
   DefaultColorScheme,
   DefaultColorPalette,
   DefaultVariantProp,
+  PaletteOptions,
 } from "@mui/joy/styles/types";
 import Select from "@mui/joy/Select";
 import Option from "@mui/joy/Option";
@@ -51,11 +52,12 @@ const PaletteControl = () => {
       {options.colors.map((color) => {
         const isOpen = selectedPanel === color.id;
         const _colorScheme = colorScheme as DefaultColorScheme;
-        const palette =
-          appState.theme.colorSchemes[_colorScheme].palette[color.id];
+        const _palette = appState.theme.colorSchemes[_colorScheme].palette;
         const themeOptions =
           appState.themeOptions?.colorSchemes?.[_colorScheme]?.palette;
 
+        // Palette is incorrectly typed in the Joy Theme as it's missing all the variants
+        const palette = (_palette as unknown as PaletteOptions)[color.id];
         let keys: (keyof PaletteVariant)[] = [];
 
         if (selectedVariant === "solid") {
@@ -163,7 +165,7 @@ const PaletteControl = () => {
                     sx={{
                       display: "grid",
                       gap: 2,
-                      gridTemplateColumns: "repeat(2, 1fr)",
+                      gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
                     }}
                   >
                     {paletteKeys.map((key) => {
@@ -191,9 +193,6 @@ const PaletteControl = () => {
                           onClear={() => {
                             appState.clearColor(color.id, key);
                           }}
-                          // Don't ask me why this is needed. Textfield does it's own thing
-                          // inside css grid..something to do with the padding
-                          textFieldSx={{ display: "inline-grid" }}
                         />
                       );
                     })}
