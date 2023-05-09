@@ -21,6 +21,7 @@ const Navigation = () => {
         top: 73,
         height: "calc(100vh - 73px)",
         alignSelf: "flex-start",
+        overflow: "auto",
       }}
     >
       <List size="sm" sx={{ "--List-item-radius": "8px" }}>

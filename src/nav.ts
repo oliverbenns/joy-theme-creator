@@ -12,8 +12,12 @@ import RadioSection from "./sections/RadioSection";
 import SelectSection from "./sections/SelectSection";
 import SliderSection from "./sections/SliderSection";
 import SwitchSection from "./sections/SwitchSection";
+import TableSection from "./sections/TableSection";
 import TabsSection from "./sections/TabsSection";
 import InputSection from "./sections/InputSection";
+import AlertSection from "./sections/AlertSection";
+import CircularProgressSection from "./sections/CircularProgressSection";
+import LinearProgressSection from "./sections/LinearProgressSection";
 import TypographySection from "./sections/TypographySection";
 
 interface NavItem {
@@ -40,18 +44,18 @@ export const navGroups: NavGroup[] = [
           "Buttons allow users to take actions, and make choices, with a single tap.",
       },
       {
-        id: "input",
-        label: "Input",
-        component: InputSection,
-        description:
-          "The Input component facilitates the entry of text data from the user.",
-      },
-      {
         id: "checkbox",
         label: "Checkbox",
         component: CheckboxSection,
         description:
           "Checkboxes allow the user to select one or more items from a set.",
+      },
+      {
+        id: "input",
+        label: "Input",
+        component: InputSection,
+        description:
+          "The Input component facilitates the entry of text data from the user.",
       },
       {
         id: "radio-button",
@@ -121,11 +125,44 @@ export const navGroups: NavGroup[] = [
           "Lists are continuous, vertical indexes of text or images.",
       },
       {
+        id: "table",
+        label: "Table",
+        component: TableSection,
+        description:
+          "Tables display sets of data organized in rows and columns.",
+      },
+      {
         id: "typography",
         label: "Typography",
         component: TypographySection,
         description:
           "Use typography to present your design and content as clearly and efficiently as possible.",
+      },
+    ],
+  },
+  {
+    title: "Feedback",
+    items: [
+      {
+        id: "alert",
+        label: "Alert",
+        component: AlertSection,
+        description:
+          "Alerts display brief messages for the user without interrupting their use of the app.",
+      },
+      {
+        id: "circular-progress",
+        label: "Circular Progress",
+        component: CircularProgressSection,
+        description:
+          "The Circular Progress component showcases the duration of a process or an indefinite wait period.",
+      },
+      {
+        id: "linear-progress",
+        label: "Linear Progress",
+        component: LinearProgressSection,
+        description:
+          "Linear Progress indicators, commonly known as loaders, express an unspecified wait time or display the length of a process.",
       },
     ],
   },
